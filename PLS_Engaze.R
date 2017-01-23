@@ -1,7 +1,9 @@
-data = read.table(url('https://raw.githubusercontent.com/EmBro/SharedElectric/master/EngazeData.csv'),
+data = read.table(url('https://raw.githubusercontent.com/EmBro/SharedElectric/master/EngazeData1.csv'),
                dec = ',', sep = ';', header = T, row.names = 1)
 
 data = as.matrix(data)
+
+
 
 library(lattice)
 
@@ -40,11 +42,9 @@ m2 = pls(x2,y2, scale = T, cv = 10, coeffs.ci = 'jk')
 
 m3 = pls(x3,y3, scale = T, cv = 10, coeffs.ci = 'jk')
 
-
 plot.new()
 plotRMSE(m1, main = 'without scaling')
 plotRMSE(m1.1, main = 'with scaling')
-
 
 library("mdatools", lib.loc="/Library/Frameworks/R.framework/Versions/3.3/Resources/library")
 
@@ -52,10 +52,11 @@ summary(m1)
 summary(m2)
 summary(m3)
 
-
 plot.new()
 plotRegcoeffs(m1, type = 'h', show.labels = T)
 
 plotRegcoeffs(m2, type = 'h', show.labels = T)
 
 plotRegcoeffs(m3, type = 'h', show.labels = T)
+
+  

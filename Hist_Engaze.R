@@ -1,6 +1,5 @@
-d = read.table(url('https://raw.githubusercontent.com/EmBro/SharedElectric/master/EngazeData.csv'),
+d = read.table(url('https://raw.githubusercontent.com/EmBro/SharedElectric/master/EngazeData1.csv'),
                dec = ',', sep = ';', header = T, row.names = 1)
-class(d)
 
 hist(d$Promo, breaks = 10, main = 'How good do you find your DSO to be, 
      regarding promotion of renewable energy?', freq = F)
@@ -68,3 +67,4 @@ legend(x = "topleft", # location of legend within plot area
        c("Density", "Bell Curve", "Mean", "Median"),
        col = c("chocolate3", 'darkblue', "forestgreen", "red"),
        lwd = c(2, 2, 2))
+
